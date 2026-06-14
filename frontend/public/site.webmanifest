@@ -1,0 +1,8 @@
+{
+  "name": "Rahul Pal Portfolio",
+  "short_name": "Rahul Pal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101827",
+  "theme_color": "#2563eb"
+}
