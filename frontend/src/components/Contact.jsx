@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { FiMail, FiSend } from 'react-icons/fi'
+import axios from '../api'
 
 const initialForm = { name: '', email: '', subject: '', message: '' }
 

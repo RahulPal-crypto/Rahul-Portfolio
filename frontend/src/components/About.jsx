@@ -14,12 +14,14 @@ export default function About(){
           <p>
             I am a Computer Science student and full stack developer focused on building
             useful web products, from responsive React interfaces to secure Express APIs.
+            I also have strong problem-solving and DSA practice, with 800+ questions
+            solved across platforms like LeetCode, GeeksforGeeks, and HackerRank.
             My work style is simple: understand the problem, design the flow, and ship
             something users can trust.
           </p>
           <div className="metric-row">
-            <div><strong>10+</strong><span>Core technologies</span></div>
-            <div><strong>4</strong><span>Portfolio modules</span></div>
+            <div><strong>800+</strong><span>Coding problems solved</span></div>
+            <div><strong>DSA</strong><span>Arrays, graphs, trees</span></div>
             <div><strong>MERN</strong><span>Primary stack</span></div>
           </div>
         </div>

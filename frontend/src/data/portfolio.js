@@ -7,40 +7,53 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/',
   resumeUrl: '/resume.pdf',
   summary:
-    'Full stack developer focused on reliable MERN applications, clean user experiences, and production-minded API design.',
+    'Full stack developer with strong DSA fundamentals, 800+ coding problems solved, and a focus on reliable MERN applications.',
 }
 
 export const projects = [
   {
-    _id: 'portfolio-platform',
-    title: 'Portfolio CMS Platform',
+    _id: 'krishisetu',
+    title: 'KrishiSetu - Direct Farm Trading Platform',
     category: 'Full Stack',
     description:
-      'A polished MERN portfolio foundation with protected content APIs, contact capture, mock fallback mode, and responsive pages.',
+      'A full-stack marketplace that enables farmers to sell products directly to nearby customers, reducing dependency on middlemen.',
     problem:
-      'A developer portfolio should be easy to update, recruiter-friendly, and stable even when external services are unavailable.',
-    role: 'Designed the frontend experience, backend routes, auth flow, and mock-mode API fallback.',
-    techStack: ['React', 'Express', 'MongoDB', 'JWT'],
-    features: ['Protected admin routes', 'Project and skill APIs', 'Responsive portfolio UI', 'Contact message capture'],
+      'Farmers often depend on middlemen to reach buyers, which can reduce profit margins and make local discovery harder for customers.',
+    role: 'Developed the full-stack marketplace, including frontend flows, secure authentication, REST APIs, and MongoDB-backed product discovery.',
+    techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Tailwind CSS'],
+    features: [
+      'Direct farmer-to-customer marketplace',
+      'Location-based product discovery with MongoDB GeoJSON',
+      'JWT authentication with role-based access control',
+      'Product management, cart handling, and order processing APIs',
+      'Responsive React and Tailwind CSS frontend',
+    ],
     challenge:
-      'The backend needed to remain usable even if MongoDB is offline, so the API now serves a professional mock dataset.',
-    learned: 'Reliable developer experience matters as much as visual polish when presenting full-stack work.',
+      'The platform needed efficient hyperlocal search and filtering while supporting separate farmer and customer workflows.',
+    learned: 'Improved practical full-stack skills in geospatial querying, role-based auth, scalable REST API design, and responsive marketplace UX.',
     githubLink: 'https://github.com/',
     liveLink: 'https://example.com',
   },
   {
-    _id: 'api-dashboard',
-    title: 'Developer API Dashboard',
+    _id: 'complaint-management-system',
+    title: 'Complaint Management System',
     category: 'Backend',
     description:
-      'A clean admin-ready data model for managing projects, skills, profile content, visitor messages, and deployment status.',
-    problem: 'Portfolio owners need one place to review data, messages, and system health.',
-    role: 'Structured dashboard cards, message workflows, health checks, and admin content areas.',
-    techStack: ['Node.js', 'Express', 'Mongoose', 'JWT'],
-    features: ['API health status', 'Message inbox', 'Editable content model', 'Token-based auth'],
+      'A secure backend system that helps users submit and track complaints while administrators manage complaint status and users.',
+    problem:
+      'Many organizations rely on manual complaint handling, which makes status tracking unclear for users and issue resolution difficult for administrators.',
+    role: 'Built the Node.js and MongoDB backend, authentication flow, role-based permissions, admin complaint workflows, logging, and production security setup.',
+    techStack: ['Node.js', 'Express.js', 'MongoDB', 'Google OAuth', 'JWT', 'Docker'],
+    features: [
+      'Secure complaint submission and tracking',
+      'Google OAuth and JWT authentication',
+      'Role-based access control for users and admins',
+      'Admin dashboard for complaint status updates',
+      'Helmet, rate limiting, CORS, Winston logging, and Docker deployment',
+    ],
     challenge:
-      'The dashboard needed to communicate backend capability without overwhelming the public portfolio.',
-    learned: 'Good admin tools should be dense, quiet, and action-oriented.',
+      'The backend needed secure access control, transparent complaint tracking, and admin workflows that could scale beyond manual processes.',
+    learned: 'Learned secure authentication, RBAC, scalable REST API design, backend security with Helmet, rate limiting and CORS, Docker deployment, and Winston-based logging.',
     githubLink: 'https://github.com/',
     liveLink: 'https://example.com',
   },
@@ -79,21 +92,22 @@ export const skillGroups = [
     items: ['MongoDB', 'Mongoose', 'CRUD flows', 'Schema design'],
   },
   {
-    title: 'Tools',
-    level: 'Intermediate',
-    items: ['Vite', 'GitHub', 'Deployment', 'API testing'],
+    title: 'DSA',
+    level: 'Strong',
+    items: ['Arrays', 'Linked Lists', 'Stacks', 'Queues', 'Hash Maps', 'Trees', 'Graphs'],
   },
 ]
 
 export const achievements = [
+  { title: '800+ Coding Problems Solved', detail: 'Practiced problem solving across LeetCode, GeeksforGeeks, HackerRank, and similar coding platforms.' },
+  { title: 'Strong DSA Foundation', detail: 'Covered arrays, linked lists, stacks, queues, hash maps, trees, graphs, and core algorithmic patterns.' },
   { title: 'MERN Portfolio System', detail: 'Built a complete full-stack portfolio with auth-ready APIs and polished UI.' },
   { title: 'API Reliability Upgrade', detail: 'Added mock fallback and health checks so the project remains demo-ready.' },
-  { title: 'Responsive Design Pass', detail: 'Verified desktop and mobile layouts with browser automation.' },
 ]
 
 export const timeline = [
   { year: '2026', title: 'Full-stack portfolio upgrade', detail: 'Refined the project into a recruiter-ready MERN showcase.' },
-  { year: '2025', title: 'MERN stack practice', detail: 'Focused on React interfaces, Express APIs, MongoDB models, and JWT auth.' },
+  { year: '2025', title: 'DSA and MERN stack practice', detail: 'Solved 800+ coding problems while building React interfaces, Express APIs, MongoDB models, and JWT auth.' },
   { year: '2024', title: 'Computer Science foundation', detail: 'Built core programming, database, and web development fundamentals.' },
 ]
 
@@ -111,9 +125,9 @@ export const testimonials = [
 ]
 
 export const blogNotes = [
+  { title: 'How solving 800+ DSA problems improved my coding approach', tag: 'DSA', readTime: '5 min' },
   { title: 'How I made the portfolio reliable without MongoDB', tag: 'Backend', readTime: '4 min' },
   { title: 'Designing project pages recruiters can scan', tag: 'Frontend', readTime: '3 min' },
-  { title: 'What I learned while polishing a MERN app', tag: 'Learning', readTime: '5 min' },
 ]
 
 export const deploymentChecks = [

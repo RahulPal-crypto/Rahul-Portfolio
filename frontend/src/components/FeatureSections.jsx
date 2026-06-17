@@ -8,7 +8,7 @@ export function ExperienceTimeline(){
       <div className="content-wrap two-column-section">
         <div className="section-heading compact">
           <span className="eyebrow">Experience</span>
-          <h2>Progress timeline hirers can scan quickly.</h2>
+          <h2>Progress built through practice, projects, and problem solving.</h2>
         </div>
         <div className="timeline-list">
           {timeline.map(item => (
@@ -33,7 +33,7 @@ export function Achievements(){
         <div className="section-heading split">
           <div>
             <span className="eyebrow">Proof</span>
-            <h2>Achievements, certificates, and credibility signals.</h2>
+            <h2>Signals that show consistency beyond the interface.</h2>
           </div>
           <div className="section-icon"><FiAward aria-hidden="true" /></div>
         </div>
@@ -57,7 +57,7 @@ export function Testimonials(){
       <div className="content-wrap">
         <div className="section-heading compact">
           <span className="eyebrow">Recommendations</span>
-          <h2>Real feedback placeholders ready for mentors or clients.</h2>
+          <h2>Working style that values clarity, ownership, and useful delivery.</h2>
         </div>
         <div className="testimonial-grid">
           {testimonials.map(item => (
@@ -81,7 +81,7 @@ export function BlogNotes(){
         <div className="section-heading split">
           <div>
             <span className="eyebrow">Notes</span>
-            <h2>Learning notes that can become a blog.</h2>
+            <h2>Learning notes from building and solving consistently.</h2>
           </div>
           <div className="section-icon"><FiBookOpen aria-hidden="true" /></div>
         </div>
@@ -106,13 +106,13 @@ export function LiveSignals(){
         <article className="signal-panel">
           <FiGithub aria-hidden="true" />
           <span className="eyebrow">GitHub</span>
-          <h2>Live integration ready.</h2>
-          <p>Connect the GitHub API later to show pinned repositories, contribution activity, and recent project updates.</p>
+          <h2>Code-first proof.</h2>
+          <p>Projects are shaped around real flows, clean APIs, and implementation details that can be explained clearly.</p>
         </article>
         <article className="signal-panel featured">
           <span className="eyebrow">Full-stack proof</span>
-          <h2>Not just a portfolio page.</h2>
-          <p>This project demonstrates frontend design, backend APIs, auth, contact storage, admin workflow, SEO, audits, and deployment readiness.</p>
+          <h2>More than a static portfolio.</h2>
+          <p>This site connects polished UI, backend APIs, auth-ready workflows, contact storage, SEO, and deployment-minded structure.</p>
           <div className="proof-meter">
             <span style={{ '--meter': '92%' }} />
           </div>
