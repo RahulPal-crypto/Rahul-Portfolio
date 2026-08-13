@@ -7,12 +7,14 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Seo from '../components/Seo'
-import { Achievements, BlogNotes, ExperienceTimeline, LiveSignals, Testimonials } from '../components/FeatureSections'
+import ScrollProgress from '../components/ScrollProgress'
+import { ExperienceTimeline } from '../components/FeatureSections'
 
 export default function Home(){
   return (
     <div className="min-h-screen">
       <Seo />
+      <ScrollProgress />
       <Navbar />
       <Hero />
       <main>
@@ -20,10 +22,6 @@ export default function Home(){
         <Skills />
         <ProjectsList />
         <ExperienceTimeline />
-        <Achievements />
-        <Testimonials />
-        <LiveSignals />
-        <BlogNotes />
         <Contact />
       </main>
       <Footer />

@@ -1,5 +1,11 @@
 const express = require('express')
 const router = express.Router()
+const mockToken = 'mock-token'
+
+const requireMockAuth = (req, res, next) => {
+  if (req.header('Authorization') === `Bearer ${mockToken}`) return next()
+  return res.status(401).json({ message: 'No token, authorization denied' })
+}
 
 const projects = [
   {
@@ -75,8 +81,8 @@ const messages = [
 ]
 
 router.post('/auth/login', (req, res) => {
-  const { email } = req.body
-  if (email === process.env.ADMIN_EMAIL) return res.json({ token: 'mock-token' })
+  const { email, password } = req.body
+  if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) return res.json({ token: mockToken })
   return res.status(400).json({ message: 'Invalid credentials (mock)' })
 })
 
@@ -86,12 +92,12 @@ router.get('/projects/:id', (req, res) => {
   if (!project) return res.status(404).json({ message: 'Project not found' })
   res.json(project)
 })
-router.post('/projects', (req, res) => {
+router.post('/projects', requireMockAuth, (req, res) => {
   const project = { ...req.body, _id: String(projects.length + 1) }
   projects.unshift(project)
   res.status(201).json(project)
 })
-router.put('/projects/:id', (req, res) => {
+router.put('/projects/:id', requireMockAuth, (req, res) => {
   const index = projects.findIndex((item) => item._id === req.params.id)
   if (index > -1) {
     projects[index] = { ...projects[index], ...req.body }
@@ -99,7 +105,7 @@ router.put('/projects/:id', (req, res) => {
   }
   return res.status(404).json({ message: 'Project not found' })
 })
-router.delete('/projects/:id', (req, res) => {
+router.delete('/projects/:id', requireMockAuth, (req, res) => {
   const index = projects.findIndex((item) => item._id === req.params.id)
   if (index > -1) {
     projects.splice(index, 1)
@@ -112,14 +118,14 @@ router.get('/skills', (req, res) => res.json(skills))
 router.get('/achievements', (req, res) => res.json(achievements))
 router.get('/profile', (req, res) => res.json(profile))
 router.post('/contact', (req, res) => res.status(201).json({ message: 'Message received (mock)' }))
-router.get('/contact', (req, res) => res.json(messages))
-router.patch('/contact/:id/status', (req, res) => {
+router.get('/contact', requireMockAuth, (req, res) => res.json(messages))
+router.patch('/contact/:id/status', requireMockAuth, (req, res) => {
   const message = messages.find((item) => item._id === req.params.id)
   if (!message) return res.status(404).json({ message: 'Message not found' })
   message.status = req.body.status === 'read' ? 'read' : 'unread'
   res.json(message)
 })
-router.delete('/contact/:id', (req, res) => {
+router.delete('/contact/:id', requireMockAuth, (req, res) => {
   const index = messages.findIndex((item) => item._id === req.params.id)
   if (index === -1) return res.status(404).json({ message: 'Message not found' })
   messages.splice(index, 1)

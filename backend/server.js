@@ -66,17 +66,20 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-app.use((err, req, res, next) => {
-  console.error(err);
-  const status = err.name === 'CastError' ? 400 : 500;
-  res.status(status).json({
-    message: status === 400 ? 'Invalid request id' : 'Server error',
-  });
-});
-
 const start = async () => {
   const dbOk = await connectDB();
   setupRoutes(!dbOk);
+
+  // Error handlers must be registered after routes so asynchronous route errors
+  // are forwarded here instead of falling through to Express's default handler.
+  app.use((err, req, res, next) => {
+    console.error(err);
+    const status = err.name === 'CastError' ? 400 : 500;
+    res.status(status).json({
+      message: status === 400 ? 'Invalid request id' : 'Server error',
+    });
+  });
+
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 };
